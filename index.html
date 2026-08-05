@@ -116,6 +116,17 @@
             color: #555;
             font-size: 0.9rem;
         }
+        .contador {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a8a;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
 
         @media (max-width: 768px) {
             h1 {
@@ -223,6 +234,22 @@
 
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
+<div class="contador">
+    👥 Visitas ao site: <span id="contador-visitas">0</span>
+</div>
+    <script>
+    // contador simples usando localStorage
+    let visitas = localStorage.getItem("visitasSite");
 
+    if (!visitas) {
+        visitas = 1;
+    } else {
+        visitas = parseInt(visitas) + 1;
+    }
+
+    localStorage.setItem("visitasSite", visitas);
+
+    document.getElementById("contador-visitas").innerText = visitas;
+</script>
 </body>
 </html>
