@@ -4,9 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Assembleia de Deus Torre Forte</title>
+
 
 <link rel="stylesheet"
 href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
@@ -14,24 +16,30 @@ href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/what
 
 <style>
 
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+
 body{
 
 font-family:Arial,sans-serif;
+
 background:#f2f2f2;
+
 color:#222;
 
 }
 
 
+
 header{
 
 text-align:center;
+
 padding:25px 15px;
 
 }
@@ -40,6 +48,7 @@ padding:25px 15px;
 .logo{
 
 width:160px;
+
 max-width:80%;
 
 }
@@ -48,7 +57,10 @@ max-width:80%;
 h1{
 
 color:#1e3a8a;
+
 font-size:2rem;
+
+margin-top:10px;
 
 }
 
@@ -57,87 +69,18 @@ font-size:2rem;
 
 color:#555;
 
-}
-
-
-/* AO VIVO */
-
-.video-container{
-
-position:relative;
-width:100%;
-padding-bottom:56.25%;
-height:0;
-overflow:hidden;
-border-radius:15px;
-
-}
-
-
-.ao-vivo{
-
-position:absolute;
-
-top:15px;
-left:15px;
-
-background:#d00000;
-
-color:white;
-
-padding:8px 15px;
-
-border-radius:20px;
-
-font-weight:bold;
-
-font-size:14px;
-
-z-index:20;
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
-}
-
-.bolinha{
-
-width:12px;
-height:12px;
-
-background:white;
-
-border-radius:50%;
-
-animation:pulsar 1s infinite;
-
-}
-
-
-@keyframes pulsar{
-
-50%{
-
-opacity:.3;
-
-transform:scale(1.5);
-
-}
+font-size:16px;
 
 }
 
 
 
-/* LAYOUT */
 
 .conteudo{
 
-max-width:900px;
-
 width:100%;
+
+max-width:900px;
 
 margin:auto;
 
@@ -147,9 +90,11 @@ padding:15px;
 
 
 
+
 .player-card,
 .chat-box,
 .contador{
+
 
 background:white;
 
@@ -160,6 +105,7 @@ border-radius:20px;
 box-shadow:0 4px 15px rgba(0,0,0,.12);
 
 margin-bottom:20px;
+
 
 }
 
@@ -183,7 +129,29 @@ margin-bottom:20px;
 
 
 
+
+
+/* VIDEO */
+
+
+.video-container{
+
+position:relative;
+
+width:100%;
+
+aspect-ratio:16/9;
+
+overflow:hidden;
+
+border-radius:15px;
+
+}
+
+
+
 .video-container iframe{
+
 
 position:absolute;
 
@@ -197,177 +165,132 @@ border:0;
 
 
 
-.banner{
-
-width:100%;
-
-max-width:850px;
-
-height:auto;
-
-margin:25px auto;
-
-display:block;
-
-border-radius:15px;
-
-}
 
 
+/* INDICADOR AO VIVO */
 
 
-/* CHAT */
+.ao-vivo{
 
 
-#mensagens,
-#pedidos{
+position:absolute;
 
-height:300px;
+top:15px;
 
-overflow-y:auto;
-
-background:#f5f5f5;
-
-padding:10px;
-
-border-radius:15px;
-
-}
+left:15px;
 
 
+background:#d00000;
 
-.msg{
-
-background:#1e3a8a;
 
 color:white;
 
-padding:12px;
 
-border-radius:12px;
-
-margin-bottom:10px;
-
-}
+padding:8px 15px;
 
 
-
-.msg small,
-.pedido small{
-
-display:block;
-
-font-size:11px;
-
-margin-top:5px;
-
-}
+border-radius:20px;
 
 
+font-size:14px;
 
-.pedido{
-
-background:white;
-
-padding:12px;
-
-border-left:5px solid #1e3a8a;
-
-border-radius:10px;
-
-margin-bottom:10px;
-
-}
-
-
-
-.chat-input{
-
-margin-top:15px;
-
-}
-
-
-
-.chat-input input,
-.chat-input textarea{
-
-
-width:100%;
-
-padding:12px;
-
-border-radius:10px;
-
-border:1px solid #ccc;
-
-margin-bottom:10px;
-
-font-size:16px;
-
-}
-
-
-
-.chat-input textarea{
-
-height:80px;
-
-resize:none;
-
-}
-
-
-
-.chat-input button{
-
-width:100%;
-
-background:#1e3a8a;
-
-color:white;
-
-border:0;
-
-padding:12px;
-
-border-radius:10px;
-
-font-size:16px;
-
-}
-
-
-
-/* CONTADOR */
-
-.contador{
-
-text-align:center;
-
-font-size:18px;
 
 font-weight:bold;
 
-color:#1e3a8a;
+
+z-index:5;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+gap:8px;
+
 
 }
 
 
 
-footer{
+.bolinha{
 
-text-align:center;
 
-padding:20px;
+width:12px;
 
-color:#555;
+height:12px;
+
+
+background:white;
+
+
+border-radius:50%;
+
+
+animation:pulsar 1s infinite;
+
 
 }
 
+
+
+@keyframes pulsar{
+
+
+50%{
+
+opacity:.3;
+
+transform:scale(1.5);
+
+}
+
+
+}
+
+
+
+
+
+
+/* BANNER */
+
+
+.banner{
+
+
+width:100%;
+
+
+max-width:850px;
+
+
+height:auto;
+
+
+display:block;
+
+
+margin:25px auto 0;
+
+
+border-radius:15px;
+
+
+}
+
+
+
+
+
+
+
+/* RESPONSIVO */
 
 
 @media(max-width:768px){
+
 
 h1{
 
@@ -375,11 +298,33 @@ font-size:1.5rem;
 
 }
 
+
+
+.conteudo{
+
+padding:10px;
+
 }
+
+
+
+.player-card,
+.chat-box{
+
+border-radius:15px;
+
+}
+
+
+
+}
+
 
 </style>
 
+
 </head>
+
 
 
 <body>
@@ -390,6 +335,7 @@ font-size:1.5rem;
 
 
 <img class="logo"
+
 src="./img/1000448259-removebg-preview (2).png">
 
 
@@ -407,7 +353,10 @@ Web Rádio • Louvores • Palavra • Oração
 </p>
 
 
+
 </header>
+
+
 
 
 
@@ -415,7 +364,10 @@ Web Rádio • Louvores • Palavra • Oração
 
 
 
+
+
 <div class="player-card">
+
 
 
 <h2>
@@ -426,16 +378,9 @@ Web Rádio • Louvores • Palavra • Oração
 
 
 
-<div class="video-container">
-
-
-<div class="ao-vivo">
-
-<span class="bolinha"></span>
-
-🔴 AO VIVO
 
 <div class="video-container">
+
 
 
 <iframe
@@ -447,11 +392,17 @@ allowfullscreen>
 </iframe>
 
 
+
+
+
 <div class="ao-vivo">
+
 
 <span class="bolinha"></span>
 
+
 AO VIVO
+
 
 <span>
 
@@ -459,7 +410,9 @@ AO VIVO
 
 </span>
 
+
 </div>
+
 
 
 </div>
@@ -472,16 +425,15 @@ AO VIVO
 
 src="./IMG_20260805_160412.jpg"
 
-alt="Banner">
+alt="Banner Torre Forte">
+
+
+
 
 
 </div>
 
-
-
-
-
-<!-- CHAT -->
+<!-- CHAT AO VIVO -->
 
 
 <div class="chat-box">
@@ -494,6 +446,7 @@ alt="Banner">
 </h3>
 
 
+
 <div id="mensagens"></div>
 
 
@@ -501,16 +454,23 @@ alt="Banner">
 <div class="chat-input">
 
 
-<input id="nome"
+<input
+
+id="nome"
 
 placeholder="Seu nome">
 
 
-<textarea id="mensagem"
+
+<textarea
+
+id="mensagem"
 
 placeholder="Digite sua mensagem">
 
 </textarea>
+
+
 
 
 <button onclick="enviarMensagem()">
@@ -520,16 +480,18 @@ Enviar mensagem
 </button>
 
 
-</div>
-
 
 </div>
 
 
 
+</div>
 
 
-<!-- PEDIDOS -->
+
+
+
+<!-- PEDIDOS DE ORAÇÃO -->
 
 
 <div class="chat-box">
@@ -542,22 +504,34 @@ Enviar mensagem
 </h3>
 
 
+
 <div id="pedidos"></div>
+
+
 
 
 <div class="chat-input">
 
 
-<input id="nomePedido"
+<input
+
+id="nomePedido"
 
 placeholder="Seu nome">
 
 
-<textarea id="pedido"
 
-placeholder="Digite seu pedido">
+
+
+<textarea
+
+id="pedido"
+
+placeholder="Digite seu pedido de oração ou louvor">
 
 </textarea>
+
+
 
 
 <button onclick="enviarPedido()">
@@ -567,14 +541,24 @@ Enviar pedido
 </button>
 
 
-</div>
-
 
 </div>
 
+
+
+</div>
+
+
+
+
+
+
+
+<!-- CONTADOR -->
 
 
 <div class="contador">
+
 
 👥 Visitas ao site:
 
@@ -585,8 +569,17 @@ Enviar pedido
 </span>
 
 
+
 </div>
-    <!-- BOTÃO WHATSAPP -->
+
+
+
+
+
+
+
+<!-- WHATSAPP -->
+
 
 <a id="robbu-whatsapp-button"
 
@@ -602,6 +595,7 @@ Peça seu louvor ou oração
 </div>
 
 
+
 <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
 
 
@@ -610,24 +604,20 @@ Peça seu louvor ou oração
 
 
 
+
+
 <footer>
+
 
 © 2026 Assembleia de Deus Torre Forte — Todos os direitos reservados.
 
+
 </footer>
-
-
-
-
-<!-- FIREBASE -->
-
 <script type="module">
-
 
 import { initializeApp }
 
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
 
 
 import {
@@ -680,6 +670,7 @@ measurementId: "G-TQZ3787R0P"
 
 
 
+
 const app = initializeApp(firebaseConfig);
 
 
@@ -689,27 +680,34 @@ const db = getDatabase(app);
 
 
 
-/* CHAT */
+/* =====================
+CHAT AO VIVO
+===================== */
 
 
 const chatRef = ref(db,"mensagens");
 
 
 
-window.enviarMensagem=function(){
+window.enviarMensagem = function(){
 
 
-let nome=document.getElementById("nome").value;
-
-let mensagem=document.getElementById("mensagem").value;
+const nome = document.getElementById("nome").value.trim();
 
 
+const mensagem = document.getElementById("mensagem").value.trim();
 
-if(nome.trim()=="" || mensagem.trim()==""){
+
+
+
+if(nome==="" || mensagem===""){
+
 
 alert("Digite seu nome e sua mensagem");
 
+
 return;
+
 
 }
 
@@ -717,11 +715,13 @@ return;
 
 push(chatRef,{
 
+
 nome:nome,
 
 mensagem:mensagem,
 
 data:new Date().toLocaleString("pt-BR")
+
 
 });
 
@@ -734,10 +734,12 @@ document.getElementById("mensagem").value="";
 
 
 
+
 onChildAdded(chatRef,(dados)=>{
 
 
-let m=dados.val();
+const m=dados.val();
+
 
 
 document.getElementById("mensagens").innerHTML += `
@@ -748,7 +750,9 @@ document.getElementById("mensagens").innerHTML += `
 
 <strong>${m.nome}</strong>
 
+
 <br>
+
 
 ${m.mensagem}
 
@@ -771,39 +775,51 @@ ${m.mensagem}
 
 
 
-/* PEDIDOS DE ORAÇÃO */
+/* =====================
+PEDIDOS DE ORAÇÃO
+===================== */
 
 
 const pedidosRef = ref(db,"pedidos");
 
 
 
+
 window.enviarPedido=function(){
 
 
-let nome=document.getElementById("nomePedido").value;
-
-let pedido=document.getElementById("pedido").value;
+const nome=document.getElementById("nomePedido").value.trim();
 
 
+const pedido=document.getElementById("pedido").value.trim();
 
-if(nome.trim()=="" || pedido.trim()==""){
+
+
+
+if(nome==="" || pedido===""){
+
 
 alert("Digite seu nome e seu pedido");
 
+
 return;
+
 
 }
 
 
 
+
+
 push(pedidosRef,{
+
 
 nome:nome,
 
 pedido:pedido,
 
 data:new Date().toLocaleString("pt-BR")
+
 
 });
 
@@ -816,10 +832,14 @@ document.getElementById("pedido").value="";
 
 
 
+
+
+
+
 onChildAdded(pedidosRef,(dados)=>{
 
 
-let p=dados.val();
+const p=dados.val();
 
 
 
@@ -831,7 +851,9 @@ document.getElementById("pedidos").innerHTML += `
 
 <strong>${p.nome}</strong>
 
+
 <br>
+
 
 ${p.pedido}
 
@@ -854,30 +876,41 @@ ${p.pedido}
 
 
 
-/* CONTADOR REAL DE VISITAS */
 
 
-const contadorRef = ref(db,"contador/visitas");
+/* =====================
+CONTADOR DE VISITAS
+===================== */
+
+
+const contadorRef=ref(db,"contador/visitas");
 
 
 
 get(contadorRef).then((snap)=>{
 
 
-let total = 0;
+let total=0;
+
 
 
 if(snap.exists()){
 
+
 total=snap.val();
 
+
 }
+
 
 
 set(contadorRef,total+1);
 
 
+
 });
+
+
 
 
 
@@ -889,6 +922,7 @@ document.getElementById("contador-visitas").innerText =
 snap.val() || 0;
 
 
+
 });
 
 
@@ -898,13 +932,17 @@ snap.val() || 0;
 
 
 
-/* OUVINTES ONLINE */
+
+/* =====================
+OUVINTES ONLINE
+===================== */
 
 
-const idUsuario = Date.now();
+const id=Math.random().toString(36).substring(2);
 
 
-const onlineRef = ref(db,"ouvintes/"+idUsuario);
+
+const onlineRef=ref(db,"ouvintes/"+id);
 
 
 
@@ -919,6 +957,8 @@ remove(onlineRef);
 
 
 });
+
+
 
 
 
@@ -939,11 +979,13 @@ total=Object.keys(snap.val()).length;
 
 
 
+
 document.getElementById("ouvintes-online").innerText=total;
 
 
 
 });
+
 
 
 
