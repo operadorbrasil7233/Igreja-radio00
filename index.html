@@ -8,7 +8,6 @@
 
 <title>Assembleia de Deus Torre Forte</title>
 
-
 <link rel="stylesheet"
 href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 
@@ -21,26 +20,19 @@ padding:0;
 box-sizing:border-box;
 }
 
-
 body{
 
 font-family:Arial,sans-serif;
-
 background:#f2f2f2;
-
 color:#222;
 
-line-height:1.5;
-
 }
-
 
 
 header{
 
 text-align:center;
-
-padding:25px 15px 10px;
+padding:25px 15px;
 
 }
 
@@ -48,99 +40,105 @@ padding:25px 15px 10px;
 .logo{
 
 width:160px;
-
 max-width:80%;
 
-margin-bottom:15px;
-
 }
-
 
 
 h1{
 
 color:#1e3a8a;
-
 font-size:2rem;
 
 }
-
 
 
 .subtitulo{
 
 color:#555;
 
-font-size:1rem;
-
 }
 
-/* INDICADOR AO VIVO */
 
-.ao-vivo {
+/* AO VIVO */
 
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#d00000;
-    color:white;
-    padding:8px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    font-size:14px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    z-index:10;
+.video-container{
+
+position:relative;
+width:100%;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:15px;
 
 }
 
 
-.bolinha {
+.ao-vivo{
 
-    width:12px;
-    height:12px;
-    background:white;
-    border-radius:50%;
-    animation:pulsar 1s infinite;
+position:absolute;
+
+top:15px;
+left:15px;
+
+background:#d00000;
+
+color:white;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+font-weight:bold;
+
+z-index:10;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
 
 }
 
 
-@keyframes pulsar {
+.bolinha{
 
-0%{
+width:12px;
+height:12px;
 
-opacity:1;
-transform:scale(1);
+background:white;
+
+border-radius:50%;
+
+animation:pulsar 1s infinite;
 
 }
 
+
+@keyframes pulsar{
 
 50%{
 
 opacity:.3;
+
 transform:scale(1.5);
 
 }
 
-
-100%{
-
-opacity:1;
-transform:scale(1);
-
 }
 
-}
+
+
+/* LAYOUT */
 
 .conteudo{
 
-width:100%;
-
 max-width:900px;
 
-margin:20px auto;
+width:100%;
+
+margin:auto;
 
 padding:15px;
 
@@ -154,11 +152,13 @@ padding:15px;
 
 background:white;
 
-border-radius:20px;
-
 padding:20px;
 
+border-radius:20px;
+
 box-shadow:0 4px 15px rgba(0,0,0,.12);
+
+margin-bottom:20px;
 
 }
 
@@ -172,30 +172,11 @@ text-align:center;
 
 
 
-.player-card h2,
-.chat-box h3{
+h2,h3{
 
 color:#1e3a8a;
 
 margin-bottom:20px;
-
-}
-
-
-
-.video-container{
-
-position:relative;
-
-width:100%;
-
-padding-bottom:56.25%;
-
-height:0;
-
-overflow:hidden;
-
-border-radius:15px;
 
 }
 
@@ -209,95 +190,38 @@ width:100%;
 
 height:100%;
 
-left:0;
-
-top:0;
-
 border:0;
 
 }
 
 
 
-.imgT{
+.banner{
 
-width:180px;
+width:100%;
 
-max-width:80%;
+max-width:850px;
+
+height:auto;
 
 margin:25px auto;
 
 display:block;
-
-}
-.banner{
-
-    width:100%;
-    max-width:850px;
-    height:auto;
-    display:block;
-    margin:25px auto;
-    border-radius:15px;
-    object-fit:cover;
-
-  }
-
-#pedidos{
-
-height:250px;
-
-overflow-y:auto;
-
-background:#f5f5f5;
-
-padding:10px;
 
 border-radius:15px;
 
 }
 
 
-.pedido{
-
-background:#fff;
-
-border-left:5px solid #1e3a8a;
-
-padding:12px;
-
-margin-bottom:10px;
-
-border-radius:10px;
-
-box-shadow:0 2px 5px rgba(0,0,0,.1);
-
-}
 
 
-.pedido small{
-
-display:block;
-
-font-size:11px;
-
-color:#666;
-
-margin-top:5px;
-
-}
 /* CHAT */
 
-.chat-box{
 
-margin-top:30px;
+#mensagens,
+#pedidos{
 
-}
-
-
-
-#mensagens{
-
-height:320px;
+height:300px;
 
 overflow-y:auto;
 
@@ -323,12 +247,12 @@ border-radius:12px;
 
 margin-bottom:10px;
 
-word-wrap:break-word;
-
 }
 
 
-.msg small{
+
+.msg small,
+.pedido small{
 
 display:block;
 
@@ -336,7 +260,21 @@ font-size:11px;
 
 margin-top:5px;
 
-opacity:.8;
+}
+
+
+
+.pedido{
+
+background:white;
+
+padding:12px;
+
+border-left:5px solid #1e3a8a;
+
+border-radius:10px;
+
+margin-bottom:10px;
 
 }
 
@@ -353,6 +291,7 @@ margin-top:15px;
 .chat-input input,
 .chat-input textarea{
 
+
 width:100%;
 
 padding:12px;
@@ -361,9 +300,9 @@ border-radius:10px;
 
 border:1px solid #ccc;
 
-font-size:16px;
-
 margin-bottom:10px;
+
+font-size:16px;
 
 }
 
@@ -395,31 +334,21 @@ border-radius:10px;
 
 font-size:16px;
 
-cursor:pointer;
-
 }
 
 
 
-.chat-input button:hover{
-
-opacity:.8;
-
-}
-
-
+/* CONTADOR */
 
 .contador{
 
-margin-top:20px;
-
 text-align:center;
-
-color:#1e3a8a;
 
 font-size:18px;
 
 font-weight:bold;
+
+color:#1e3a8a;
 
 }
 
@@ -445,23 +374,7 @@ font-size:1.5rem;
 
 }
 
-
-.conteudo{
-
-padding:10px;
-
 }
-
-
-.player-card,
-.chat-box{
-
-border-radius:15px;
-
-}
-
-}
-
 
 </style>
 
@@ -469,6 +382,7 @@ border-radius:15px;
 
 
 <body>
+
 
 
 <header>
@@ -479,12 +393,16 @@ src="./img/1000448259-removebg-preview (2).png">
 
 
 <h1>
+
 Assembleia de Deus Torre Forte
+
 </h1>
 
 
 <p class="subtitulo">
+
 Web Rádio • Louvores • Palavra • Oração
+
 </p>
 
 
@@ -495,11 +413,14 @@ Web Rádio • Louvores • Palavra • Oração
 <main class="conteudo">
 
 
+
 <div class="player-card">
 
 
 <h2>
+
 🎵 Ao Vivo Agora
+
 </h2>
 
 
@@ -511,9 +432,16 @@ Web Rádio • Louvores • Palavra • Oração
 
 <span class="bolinha"></span>
 
-AO VIVO
+🔴 AO VIVO
+
+<span>
+
+👥 <span id="ouvintes-online">0</span>
+
+</span>
 
 </div>
+
 
 
 <iframe
@@ -526,22 +454,32 @@ allowfullscreen>
 
 
 </div>
+
+
+
 <img class="banner"
+
 src="./IMG_20260805_160412.jpg"
-alt="Banner Torre Forte">
+
+alt="Banner">
+
 
 </div>
 
 
 
-<!-- CHAT FIREBASE -->
+
+
+<!-- CHAT -->
 
 
 <div class="chat-box">
 
 
 <h3>
+
 💬 Chat Ao Vivo
+
 </h3>
 
 
@@ -552,14 +490,15 @@ alt="Banner Torre Forte">
 <div class="chat-input">
 
 
-<input 
-id="nome"
+<input id="nome"
+
 placeholder="Seu nome">
 
 
-<textarea
-id="mensagem"
+<textarea id="mensagem"
+
 placeholder="Digite sua mensagem">
+
 </textarea>
 
 
@@ -574,18 +513,69 @@ Enviar mensagem
 
 
 </div>
-<!-- CONTADOR DE VISITAS -->
 
-<div class="contador">
 
-👥 Visitas ao site:
-<span id="contador-visitas">0</span>
+
+
+
+<!-- PEDIDOS -->
+
+
+<div class="chat-box">
+
+
+<h3>
+
+🙏 Pedidos de Oração e Louvores
+
+</h3>
+
+
+<div id="pedidos"></div>
+
+
+<div class="chat-input">
+
+
+<input id="nomePedido"
+
+placeholder="Seu nome">
+
+
+<textarea id="pedido"
+
+placeholder="Digite seu pedido">
+
+</textarea>
+
+
+<button onclick="enviarPedido()">
+
+Enviar pedido
+
+</button>
+
+
+</div>
+
 
 </div>
 
 
 
-<!-- BOTÃO WHATSAPP -->
+<div class="contador">
+
+👥 Visitas ao site:
+
+<span id="contador-visitas">
+
+0
+
+</span>
+
+
+</div>
+    <!-- BOTÃO WHATSAPP -->
 
 <a id="robbu-whatsapp-button"
 
@@ -595,7 +585,9 @@ href="https://api.whatsapp.com/send?phone=5585988099844&text=Ol%C3%A1%20vim%20at
 
 
 <div class="rwb-tooltip">
+
 Peça seu louvor ou oração
+
 </div>
 
 
@@ -615,13 +607,16 @@ Peça seu louvor ou oração
 
 
 
-<!-- FIREBASE CHAT -->
+
+<!-- FIREBASE -->
 
 <script type="module">
 
 
-import { initializeApp } 
+import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
 
 
 import {
@@ -632,7 +627,15 @@ ref,
 
 push,
 
-onChildAdded
+onChildAdded,
+
+get,
+
+set,
+
+onValue,
+
+remove
 
 }
 
@@ -647,30 +650,21 @@ const firebaseConfig = {
 
 apiKey: "AIzaSyDPEFjQ2kwWPqSDxrUHlnIya6P0CJtMm8g",
 
-
 authDomain: "radiotorreforte-dcc9c.firebaseapp.com",
-
 
 databaseURL: "https://radiotorreforte-dcc9c-default-rtdb.firebaseio.com",
 
-
 projectId: "radiotorreforte-dcc9c",
-
 
 storageBucket: "radiotorreforte-dcc9c.firebasestorage.app",
 
-
 messagingSenderId: "1056332477774",
-
 
 appId: "1:1056332477774:web:4e4eff0568d16072e39a1f",
 
-
 measurementId: "G-TQZ3787R0P"
 
-
 };
-
 
 
 
@@ -679,133 +673,76 @@ const app = initializeApp(firebaseConfig);
 
 
 const db = getDatabase(app);
-  // CONTADOR REAL DE VISITAS
-
-const contadorRef = ref(db,"contador/visitas");
-
-
-get(contadorRef).then((snapshot)=>{
-
-let total = 0;
-
-
-if(snapshot.exists()){
-
-total = snapshot.val();
-
-}
-
-
-total++;
-
-
-set(contadorRef,total);
-
-
-});
-
-
-onValue(contadorRef,(snapshot)=>{
-
-
-document.getElementById(
-"contador-visitas"
-).innerText = snapshot.val() || 0;
-
-
-});
-
-
-const chat = ref(db,"mensagens");
 
 
 
 
 
-
-window.enviarMensagem = function(){
-
-
-let nome = document
-.getElementById("nome")
-.value;
+/* CHAT */
 
 
-let mensagem = document
-.getElementById("mensagem")
-.value;
+const chatRef = ref(db,"mensagens");
+
+
+
+window.enviarMensagem=function(){
+
+
+let nome=document.getElementById("nome").value;
+
+let mensagem=document.getElementById("mensagem").value;
 
 
 
 if(nome.trim()=="" || mensagem.trim()==""){
 
-
 alert("Digite seu nome e sua mensagem");
 
-
 return;
-
 
 }
 
 
 
-
-push(chat,{
-
+push(chatRef,{
 
 nome:nome,
 
-
 mensagem:mensagem,
 
-
-data:new Date()
-.toLocaleString("pt-BR")
-
+data:new Date().toLocaleString("pt-BR")
 
 });
 
 
 
-document
-.getElementById("mensagem")
-.value="";
+document.getElementById("mensagem").value="";
 
 
 }
 
 
 
+onChildAdded(chatRef,(dados)=>{
 
 
-onChildAdded(chat,(dados)=>{
+let m=dados.val();
 
 
-let msg=dados.val();
-
-
-let area=document
-.getElementById("mensagens");
-
-
-
-area.innerHTML += `
+document.getElementById("mensagens").innerHTML += `
 
 
 <div class="msg">
 
 
-<strong>${msg.nome}</strong>
-
+<strong>${m.nome}</strong>
 
 <br>
 
+${m.mensagem}
 
-${msg.mensagem}
 
-
-<small>${msg.data}</small>
+<small>${m.data}</small>
 
 
 </div>
@@ -815,22 +752,16 @@ ${msg.mensagem}
 
 
 
-area.scrollTop=area.scrollHeight;
-
-
-
 });
-<script type="module">
-  import {
-ref,
-get,
-set,
-onValue
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 
-</script>
-// PEDIDOS DE ORAÇÃO
+
+
+
+
+
+/* PEDIDOS DE ORAÇÃO */
+
 
 const pedidosRef = ref(db,"pedidos");
 
@@ -874,20 +805,18 @@ document.getElementById("pedido").value="";
 
 
 
-
 onChildAdded(pedidosRef,(dados)=>{
 
 
 let p=dados.val();
 
 
-let area=document.getElementById("pedidos");
 
+document.getElementById("pedidos").innerHTML += `
 
-
-area.innerHTML += `
 
 <div class="pedido">
+
 
 <strong>${p.nome}</strong>
 
@@ -895,9 +824,12 @@ area.innerHTML += `
 
 ${p.pedido}
 
+
 <small>${p.data}</small>
 
+
 </div>
+
 
 `;
 
@@ -906,54 +838,105 @@ ${p.pedido}
 });
 
 
-<div class="chat-box">
-
-<h3>
-🙏 Pedidos de Oração e Louvores
-</h3>
 
 
-<div id="pedidos"></div>
 
 
-<div class="chat-input">
 
-<input 
-id="nomePedido"
-placeholder="Seu nome">
+/* CONTADOR REAL DE VISITAS */
 
 
-<textarea
-id="pedido"
-placeholder="Digite seu pedido de oração ou louvor">
-</textarea>
+const contadorRef = ref(db,"contador/visitas");
 
 
-<button onclick="enviarPedido()">
 
-Enviar pedido
-
-</button>
+get(contadorRef).then((snap)=>{
 
 
-</div>
+let total = 0;
 
 
-</div>
+if(snap.exists()){
 
-<!-- CONTADOR LOCAL -->
+total=snap.val();
 
-
-<script>
-
-
-let visitas = localStorage.getItem("visitasTorreForte");
+}
 
 
-if(!visitas){
+set(contadorRef,total+1);
 
-visitas=1;
 
+});
+
+
+
+onValue(contadorRef,(snap)=>{
+
+
+document.getElementById("contador-visitas").innerText =
+
+snap.val() || 0;
+
+
+});
+
+
+
+
+
+
+
+
+/* OUVINTES ONLINE */
+
+
+const idUsuario = Date.now();
+
+
+const onlineRef = ref(db,"ouvintes/"+idUsuario);
+
+
+
+set(onlineRef,true);
+
+
+
+window.addEventListener("beforeunload",()=>{
+
+
+remove(onlineRef);
+
+
+});
+
+
+
+onValue(ref(db,"ouvintes"),(snap)=>{
+
+
+let total=0;
+
+
+
+if(snap.exists()){
+
+
+total=Object.keys(snap.val()).length;
+
+
+}
+
+
+
+document.getElementById("ouvintes-online").innerText=total;
+
+
+
+});
+
+
+
+</script>
 
 
 
