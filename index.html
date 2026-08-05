@@ -239,7 +239,34 @@ border-radius:15px;
 
 }
 
+/* VÍDEO DA IGREJA */
 
+.video-igreja{
+
+width:100%;
+
+margin:25px auto 0;
+
+border-radius:15px;
+
+overflow:hidden;
+
+background:black;
+
+}
+
+
+.video-igreja video{
+
+display:block;
+
+width:100%;
+
+height:auto;
+
+max-height:500px;
+
+  }
 /* CHAT E PEDIDOS */
 
 #mensagens,
@@ -487,7 +514,18 @@ allowfullscreen>
 src="./IMG_20260805_160412.jpg"
 
 alt="Banner Assembleia de Deus Torre Forte">
+  
+<div class="video-igreja">
 
+<video controls playsinline>
+
+<source src="./video-da-igreja.mp4" type="video/mp4">
+
+Seu navegador não suporta a reprodução deste vídeo.
+
+</video>
+
+  </div>
 </div><!-- CHAT AO VIVO --><div class="chat-box"><h3>💬 Chat Ao Vivo
 
 </h3><div id="mensagens"></div><div class="chat-input"><input
