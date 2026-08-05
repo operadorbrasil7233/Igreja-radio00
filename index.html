@@ -75,7 +75,64 @@ font-size:1rem;
 
 }
 
+/* INDICADOR AO VIVO */
 
+.ao-vivo {
+
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#d00000;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    z-index:10;
+
+}
+
+
+.bolinha {
+
+    width:12px;
+    height:12px;
+    background:white;
+    border-radius:50%;
+    animation:pulsar 1s infinite;
+
+}
+
+
+@keyframes pulsar {
+
+0%{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+
+50%{
+
+opacity:.3;
+transform:scale(1.5);
+
+}
+
+
+100%{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
 
 .conteudo{
 
@@ -173,9 +230,61 @@ margin:25px auto;
 display:block;
 
 }
+.banner{
+
+    width:100%;
+    max-width:850px;
+    height:auto;
+    display:block;
+    margin:25px auto;
+    border-radius:15px;
+    object-fit:cover;
+
+  }
+
+#pedidos{
+
+height:250px;
+
+overflow-y:auto;
+
+background:#f5f5f5;
+
+padding:10px;
+
+border-radius:15px;
+
+}
 
 
+.pedido{
 
+background:#fff;
+
+border-left:5px solid #1e3a8a;
+
+padding:12px;
+
+margin-bottom:10px;
+
+border-radius:10px;
+
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+
+}
+
+
+.pedido small{
+
+display:block;
+
+font-size:11px;
+
+color:#666;
+
+margin-top:5px;
+
+}
 /* CHAT */
 
 .chat-box{
@@ -398,6 +507,15 @@ Web Rádio • Louvores • Palavra • Oração
 <div class="video-container">
 
 
+<div class="ao-vivo">
+
+<span class="bolinha"></span>
+
+AO VIVO
+
+</div>
+
+
 <iframe
 
 src="https://www.youtube.com/embed/qxzQR5uwWsk"
@@ -408,11 +526,9 @@ allowfullscreen>
 
 
 </div>
-
-
-<img class="imgT"
-src="./IMG_20260805_160412.jpg">
-
+<img class="banner"
+src="./IMG_20260805_160412.jpg"
+alt="Banner Torre Forte">
 
 </div>
 
@@ -563,6 +679,41 @@ const app = initializeApp(firebaseConfig);
 
 
 const db = getDatabase(app);
+  // CONTADOR REAL DE VISITAS
+
+const contadorRef = ref(db,"contador/visitas");
+
+
+get(contadorRef).then((snapshot)=>{
+
+let total = 0;
+
+
+if(snapshot.exists()){
+
+total = snapshot.val();
+
+}
+
+
+total++;
+
+
+set(contadorRef,total);
+
+
+});
+
+
+onValue(contadorRef,(snapshot)=>{
+
+
+document.getElementById(
+"contador-visitas"
+).innerText = snapshot.val() || 0;
+
+
+});
 
 
 const chat = ref(db,"mensagens");
@@ -669,14 +820,126 @@ area.scrollTop=area.scrollHeight;
 
 
 });
-
+<script type="module">
+  import {
+ref,
+get,
+set,
+onValue
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 
 </script>
+// PEDIDOS DE ORAÇÃO
+
+const pedidosRef = ref(db,"pedidos");
+
+
+
+window.enviarPedido=function(){
+
+
+let nome=document.getElementById("nomePedido").value;
+
+let pedido=document.getElementById("pedido").value;
+
+
+
+if(nome.trim()=="" || pedido.trim()==""){
+
+alert("Digite seu nome e seu pedido");
+
+return;
+
+}
+
+
+
+push(pedidosRef,{
+
+nome:nome,
+
+pedido:pedido,
+
+data:new Date().toLocaleString("pt-BR")
+
+});
+
+
+
+document.getElementById("pedido").value="";
+
+
+}
 
 
 
 
+onChildAdded(pedidosRef,(dados)=>{
+
+
+let p=dados.val();
+
+
+let area=document.getElementById("pedidos");
+
+
+
+area.innerHTML += `
+
+<div class="pedido">
+
+<strong>${p.nome}</strong>
+
+<br>
+
+${p.pedido}
+
+<small>${p.data}</small>
+
+</div>
+
+`;
+
+
+
+});
+
+
+<div class="chat-box">
+
+<h3>
+🙏 Pedidos de Oração e Louvores
+</h3>
+
+
+<div id="pedidos"></div>
+
+
+<div class="chat-input">
+
+<input 
+id="nomePedido"
+placeholder="Seu nome">
+
+
+<textarea
+id="pedido"
+placeholder="Digite seu pedido de oração ou louvor">
+</textarea>
+
+
+<button onclick="enviarPedido()">
+
+Enviar pedido
+
+</button>
+
+
+</div>
+
+
+</div>
 
 <!-- CONTADOR LOCAL -->
 
@@ -691,27 +954,6 @@ if(!visitas){
 
 visitas=1;
 
-}else{
-
-visitas=parseInt(visitas)+1;
-
-}
-
-
-localStorage.setItem(
-"visitasTorreForte",
-visitas
-);
-
-
-
-document.getElementById(
-"contador-visitas"
-).innerText=visitas;
-
-
-
-</script>
 
 
 
