@@ -59,4 +59,65 @@
   <div class="rwb-tooltip">Peça seu louvor ou oração</div>
   <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
 </a>
+    <div>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+header, footer {
+    text-align: center;
+    padding: 10px;
+}
+
+.conteudo {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Vídeo responsivo */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Imagem responsiva */
+.imgT {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Ajustes para celular */
+@media (max-width: 768px) {
+    .conteudo {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}</div>
 </body>
